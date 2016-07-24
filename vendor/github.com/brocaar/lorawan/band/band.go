@@ -16,6 +16,7 @@ type Name string
 const (
 	AU_915_928 Name = "AU_915_928"
 	EU_863_870 Name = "EU_863_870"
+	EU_433          = "EU_433"
 	US_902_928 Name = "US_902_928"
 )
 
@@ -183,6 +184,8 @@ func GetConfig(name Name) (Band, error) {
 		return newAU915Band()
 	case EU_863_870:
 		return newEU863Band()
+	case EU_433:
+		return newEU433Band()
 	case US_902_928:
 		return newUS902Band()
 	default:

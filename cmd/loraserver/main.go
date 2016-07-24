@@ -32,6 +32,7 @@ var version string // set by the compiler
 var bands = []string{
 	string(band.AU_915_928),
 	string(band.EU_863_870),
+	string(band.EU_433),
 	string(band.US_902_928),
 }
 

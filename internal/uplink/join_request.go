@@ -120,5 +120,10 @@ func handleCollectedJoinRequestPackets(ctx common.Context, rxPacket models.RXPac
 		return fmt.Errorf("send join-accept response error: %s", err)
 	}
 
+	log.WithFields(log.Fields{
+		"joinResp": joinResp,
+		"ns":       ns,
+	}).Info("join-accept sent")
+
 	return nil
 }

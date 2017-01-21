@@ -94,6 +94,7 @@ func (b *Backend) rxPacketHandler(c mqtt.Client, msg mqtt.Message) {
 	var rxPacket gw.RXPacket
 	if err := json.Unmarshal(msg.Payload(), &rxPacket); err != nil {
 		log.WithFields(log.Fields{
+			"data":        fmt.Sprintf("%s", msg.Payload()),
 			"data_base64": base64.StdEncoding.EncodeToString(msg.Payload()),
 		}).Errorf("backend/gateway: unmarshal rx packet error: %s", err)
 		return
